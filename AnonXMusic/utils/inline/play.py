@@ -54,23 +54,17 @@ def stream_markup_timer(_, chat_id, played, dur):
         bar = "━━━━━━━━━━⚪"
     buttons = [
         [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
-        ],
-        [
-            InlineKeyboardButton(
-                text="❰𝙊𝙬𝙣𝙚𝙧❱", url="https://t.me/ll_SEHZADA_143"
-            ),
-            InlineKeyboardButton(
-                text="❰𝗔𝗹𝗹 𝗕𝗼𝘁❱", url="https://t.me/THUNDERDEVS"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="❰𝗣𝗥𝗢𝗠𝗢𝗧𝗜𝗢𝗡 𝗔𝗩𝗔𝗜𝗟𝗔𝗕𝗟𝗘❱", url="https://t.me/ll_SEHZADA_143/51"
-            ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -85,16 +79,6 @@ def stream_markup(_, chat_id):
             InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="🔥𝙏𝙝𝙪𝙣𝙙𝙚𝙧 𝗣𝗹𝗮𝘆𝗶𝗻𝗴🚩", url="https://t.me/ll_SEHZADA_143",
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="𝙄 𝘼𝙢 𝙇𝙞𝙫𝙚 𝙉𝙤𝙬🎧", url="https://t.me/THUNDERDEVS",
-            ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -139,7 +123,6 @@ def livestream_markup(_, videoid, user_id, mode, channel, fplay):
         ],
     ]
     return buttons
-
 
 def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
     query = f"{query[:20]}"
